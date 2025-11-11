@@ -3,80 +3,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Camera</title>
+  <title>AI Camera — 让美变得更简单</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* 局部增强动画 */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeUp 1s ease-out forwards;
-    }
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
 </head>
-
 <body>
-  <!-- ===== 顶部导航 ===== -->
-  <header>
+  <header class="site-header">
     <div class="container">
-      <h1>AI Camera</h1>
-      <nav>
+      <div class="brand">AI Camera</div>
+      <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#features">Features</a>
         <a href="#gallery">Gallery</a>
-        <a href="#order" class="btn-order">预订</a>
+        <a href="#preorder" class="btn btn-ghost">预订</a>
       </nav>
     </div>
   </header>
 
-  <!-- ===== 主视觉区域 ===== -->
-  <section class="hero fade-up">
-    <div class="hero-text">
-      <h2>AI Camera，让美变得更简单。</h2>
-      <p>
-        一台为年轻女性设计的轻便 M4/3 相机，结合 AI 智能色彩优化与一键分享，
-        记录每一个闪光的瞬间。
-      </p>
-      <div class="buttons">
-        <a href="#about" class="btn primary">了解更多</a>
-        <a href="#order" class="btn secondary">立即预订</a>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <span class="tag">新品 · AI Camera</span>
+        <h1>AI Camera，让美变得更简单。</h1>
+        <p class="lead">一台为年轻女性设计的轻便 M4/3 相机，结合 AI 智能色彩优化与一键分享，记录每一个闪光的瞬间。</p>
+        <div class="hero-buttons">
+          <a href="#features" class="btn btn-primary">了解更多</a>
+          <a href="#preorder" class="btn btn-ghost">立即预订</a>
+        </div>
+        <p class="note">首批预计发货：2026 Q1 ・ 限量早鸟</p>
       </div>
-      <p class="note">首批预计发货：2026 Q1 · 限量早鸟</p>
-    </div>
-
-    <div class="hero-img fade-up" style="animation-delay:0.3s">
-      <img src="assets/cover.jpg" alt="AI Camera" />
+      <div class="hero-img">
+        <img src="assets/cover.jpg" alt="AI Camera" />
+      </div>
     </div>
   </section>
 
-  <!-- ===== 核心特性 ===== -->
-  <section id="features" class="features fade-up" style="animation-delay:0.6s">
-    <h2>核心特性</h2>
-    <p>AI 智能美化 · 自动曝光优化 · 一键分享 · 轻便可换镜设计</p>
+  <section id="about" class="section about reveal">
+    <div class="container grid-2">
+      <div>
+        <h2>重新定义记录之美</h2>
+        <p>AI Camera 不是为了替代手机，也不是复杂的专业器材。它在影像质量与社交便捷之间找到了平衡：选择 M4/3 传感器带来真实色彩与浅景深，同时搭载智能传输与快速预设，让你拍完即可分享到社交平台。</p>
+        <p>轻巧机身 • AI 色彩优化 • 一键分享 • 精准肤色还原</p>
+      </div>
+      <div>
+        <div class="card-box">
+          <h4>设计理念</h4>
+          <p>每一台 AI Camera 都从女性视角出发：握感、配色、界面交互与直观的分享流程，都是为了让拍摄变成一种日常的愉悦。</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- ===== 页脚 ===== -->
-  <footer>
-    <p>© 2025 AI Camera · All rights reserved.</p>
+  <section id="features" class="section features reveal">
+    <div class="container">
+      <h2>功能亮点</h2>
+      <div class="features-grid">
+        <div class="card">
+          <h4>AI 色彩识别</h4>
+          <p>基于场景识别的自动色彩校正，保留真实肤色与自然光影。</p>
+        </div>
+        <div class="card">
+          <h4>一键分享</h4>
+          <p>内置快速传输，与手机 APP 无缝对接，拍完即可分享到社交平台。</p>
+        </div>
+        <div class="card">
+          <h4>轻巧便携</h4>
+          <p>优化的握持与外形设计，适合日常随身携带，不再需要牺牲画质。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section gallery reveal">
+    <div class="container">
+      <h2>场景展示</h2>
+      <div class="gallery-grid">
+        <img src="assets/gallery1.jpg" alt="场景展示图1" />
+        <img src="assets/gallery2.jpg" alt="场景展示图2" />
+        <img src="assets/gallery3.jpg" alt="场景展示图3" />
+      </div>
+    </div>
+  </section>
+
+  <section id="preorder" class="section preorder reveal">
+    <div class="container">
+      <h3>预约 • 早鸟</h3>
+      <p>留下邮箱，我们会在产品首发前通知并提供早鸟优惠名额。</p>
+      <form class="preorder-form" onsubmit="event.preventDefault();handlePreorder(this)">
+        <label>邮箱</label>
+        <input name="email" type="email" required placeholder="you@example.com" />
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">预约抢先</button>
+          <button type="button" class="btn btn-ghost" onclick="alert('更多信息将会通过邮箱发送给您')">查看详情</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 AI Camera ・ 概念演示页面 ・ 请替换图片与文案用于发布</p>
+    </div>
   </footer>
 
-  <!-- ===== 滚动淡入动画 ===== -->
   <script>
-    const fadeElements = document.querySelectorAll('.fade-up');
-    const onScroll = () => {
-      fadeElements.forEach(el => {
+    function handlePreorder(form){
+      const email = form.email.value.trim();
+      if(!email) return alert('请输入邮箱');
+      alert('感谢你的预约，我们已记录：'+email+'（此为示例表单，需接入真实后端）');
+      form.reset();
+    }
+    // scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    function scrollReveal(){
+      for (let el of reveals){
         const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 80) el.style.animationPlayState = 'running';
-      });
-    };
-    window.addEventListener('scroll', onScroll);
-    onScroll();
+        if(rect.top < window.innerHeight - 100) el.classList.add('active');
+      }
+    }
+    window.addEventListener('scroll', scrollReveal);
+    scrollReveal();
   </script>
 </body>
 </html>
