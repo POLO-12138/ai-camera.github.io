@@ -1,6 +1,6 @@
 /* ===============================
-   🌸 AI Camera 官网主样式
-   版本：优化版（含移动端适配）
+   🌸 AI Camera 官网主样式（优化版）
+   主图等比自适应 + 移动端完美显示
    更新时间：2025-11
 ================================= */
 
@@ -89,15 +89,22 @@ header .btn-preorder:hover {
   font-size: 1rem;
 }
 
-/* 主图样式优化（防止手机端变形） */
+/* ✅ 主图样式优化（完美比例 + 居中 + 轻动画） */
 .hero img {
-  width: 100%;
-  max-width: 480px;
+  display: block;
+  width: 90%;
+  max-width: 420px;
   height: auto;
+  aspect-ratio: 4 / 3;
   object-fit: contain;
-  border-radius: 12px;
-  margin: 0 auto;
+  margin: 2rem auto 0;
+  border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.hero img:hover {
+  transform: scale(1.02);
 }
 
 /* 按钮组 */
@@ -235,6 +242,14 @@ footer {
 
   .hero p {
     font-size: 0.95rem;
+  }
+
+  /* 📱 手机端主图再微调，比例更自然 */
+  .hero img {
+    width: 100%;
+    max-width: 360px;
+    margin-top: 1.5rem;
+    aspect-ratio: auto;
   }
 
   .features-grid,
